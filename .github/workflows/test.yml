@@ -24,4 +24,6 @@ jobs:
         run: uv sync --all-extras --dev
 
       - name: Run tests
+        env:
+          DATABASE_URL: postgresql+asyncpg://dummy:dummy@localhost:5432/dummy
         run: uv run pytest -v
